@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JavaScript Practice</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 20px auto; padding: 0 16px; }
+  section { border: 1px solid #ccc; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  button { padding: 6px 14px; margin: 3px; cursor: pointer; }
+  input[type=text], input[type=number] { padding: 6px; margin: 3px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 8px; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  #waterTrack { background: #e5e7eb; border-radius: 6px; height: 18px; width: 100%; max-width: 400px; overflow: hidden; }
+  #waterBar { background: #2563eb; height: 100%; width: 0%; transition: width 0.3s; }
+  #mulExample { font-size: 32px; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>Практические задания</h1>
+<p>Задания 111–130: откройте Console (F12). Задания 131–135 работают прямо на этой странице.</p>
+
+<section>
+  <h2>Задание 131. Калькулятор потребления воды</h2>
+  <input type="text" id="waterWeight" placeholder="Масса тела, кг">
+  <button id="waterBtn">Рассчитать</button>
+  <p id="waterResult"></p>
+  <div id="waterTrack"><div id="waterBar"></div></div>
+  <small>Шкала до 5 л. Упрощённый учебный расчёт (30 мл на 1 кг), не медицинская рекомендация.</small>
+</section>
+
+<section>
+  <h2>Задание 132. Генератор QR-кода</h2>
+  <input type="text" id="qrText" placeholder="Ссылка, например https://example.com" size="36">
+  <button id="qrBtn">Создать QR</button>
+  <button id="qrClear">Очистить</button>
+  <button id="qrSave">Сохранить в PNG</button>
+  <p id="qrMessage"></p>
+  <div id="qrBox"></div>
+  <small>Нужен интернет: библиотека QR-кодов подключается с CDN.</small>
+</section>
+
+<section>
+  <h2>Задание 133. Интерактивная таблица умножения</h2>
+  <div id="mulExample"></div>
+  <input type="text" id="mulAnswer" placeholder="Ответ">
+  <button id="mulCheck">Проверить</button>
+  <button id="mulRestart">Начать заново</button>
+  <p id="mulFeedback"></p>
+  <p id="mulProgress"></p>
+</section>
+
+<section>
+  <h2>Задание 134. Менеджер расходов</h2>
+  <input type="text" id="expName" placeholder="Название расхода">
+  <input type="text" id="expAmount" placeholder="Сумма, ₸">
+  <button id="expAdd">Добавить</button>
+  <p id="expMessage"></p>
+  <ul id="expList"></ul>
+  <strong id="expTotal"></strong>
+</section>
+
+<section>
+  <h2>Задание 135. Электронный журнал оценок</h2>
+  <input type="text" id="jName" placeholder="ФИО студента">
+  <input type="text" id="jScore" placeholder="Баллы (0–100)">
+  <button id="jAdd">Добавить студента</button>
+  <p id="jMessage"></p>
+  <input type="text" id="jSearch" placeholder="Поиск по имени">
+  <button id="jSort">Сортировать по баллам</button>
+  <button id="jExport">Экспорт в CSV</button>
+  <table>
+    <thead><tr><th>№</th><th>ФИО</th><th>Баллы</th><th>Уровень</th><th></th></tr></thead>
+    <tbody id="jBody"></tbody>
+  </table>
+  <p id="jAverage"></p>
+  <small>Данные студентов вымышленные, сохраняются в localStorage этого браузера.</small>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
